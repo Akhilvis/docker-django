@@ -4,4 +4,4 @@ from django.shortcuts import render, HttpResponse
 
 
 def home(request):
-    return HttpResponse('This is Akhil viswam....')
+    return HttpResponse('This is Akhil viswam loves neena rajjj....')

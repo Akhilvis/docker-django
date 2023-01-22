@@ -1,0 +1,30 @@
+ version: '2'
+ services:
+
+   web:
+     build: .
+     command: python djangosample/manage.py runserver 0.0.0.0:8005
+     volumes:
+       - ./:/app
+     ports:
+       - "8001:8005"
+     depends_on: 
+      - db
+  
+   db:
+     image: postgres:13
+     ports:
+       - "5432:5432"
+     volumes:
+       - postgres_data:/var/lib/postgresql/data/
+     environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=db
+  
+ volumes:
+  postgres_data:
+
+    
+
+
